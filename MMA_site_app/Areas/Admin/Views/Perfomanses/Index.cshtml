@@ -1,0 +1,106 @@
+﻿@model IEnumerable<MMA_site_app.Models.Perfomanse>
+@{
+    if (ViewBag.Title != null) {
+        ViewData["Title"] = ViewBag.Title;
+    }
+    else {
+        ViewData["Title"] = "All perfomanses";
+    }
+}
+
+<h3 class="table-title text-center">@ViewData["Title"]</h3>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table text-center">
+    <thead>
+        <tr>
+            @if (ViewBag.HideId == null) {
+                <th>
+                    @Html.DisplayNameFor(model => model.FighterID)
+                </th>
+            }
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.EnemyName)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.EnemyLink)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Result)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Tournament)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Method)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Round)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Video)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                @if (ViewBag.HideId == null) {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FighterID)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnemyName)
+                </td>
+                <td class="text-center">
+                    @if (item.Video != null) {
+                        <span>+</span>
+                    }
+                    else {
+                        <span>-</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Result)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tournament)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Method)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Round)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td class="text-center">
+                    @if (item.Video != null) {
+                        <span>+</span>
+                    }
+                    else {
+                        <span>-</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PerfomanseID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PerfomanseID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PerfomanseID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

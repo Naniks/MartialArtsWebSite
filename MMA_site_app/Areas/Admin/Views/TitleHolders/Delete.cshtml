@@ -1,0 +1,63 @@
+﻿@model MMA_site_app.Models.TitleHolder
+
+@{
+    ViewData["Title"] = "Delete Title Holder";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TitleHolder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Record)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Record)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightCategory)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WeightCategory)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileLink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProfileLink)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImageTitle)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TitleHolderID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

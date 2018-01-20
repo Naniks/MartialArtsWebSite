@@ -1,0 +1,177 @@
+﻿@model IEnumerable<MMA_site_app.Models.Fighter>
+
+@{
+    Layout = "_LayoutProfile";
+    ViewData["Title"] = "All fighters";
+}
+
+<nav aria-label="breadcrumb" role="navigation" class="">
+    <ol class="breadcrumb breadcrumb-top breadcrumb-all-fighters">
+        <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Fighters</li>
+    </ol>
+</nav>
+
+<h2 class="history-title">FIGHTERS</h2>
+
+<form asp-action="AllFighters" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentSearchFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="AllFighters">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<div id="wc-headers">
+
+    <div class="all-fighters-category">
+        <a asp-action="AllFighters">All Fighters</a>
+    </div>
+
+    <div id="men_wc" class="clearfix wc-nav-row wc-pad">
+
+        <div class="wc-title-section ">
+            <div class="nav-red cell angle-box">
+                <span class="wc-label">Men's</span>
+            </div>
+            <span class="wc-red wc-angle"></span>
+        </div>
+        <div class="wc-classes-section">
+
+            <div id="wc-0" class="nav-gray cell angle-box">
+                <div class="wc-label">
+                    <a class="" asp-route-divisionCategory="125 lb">
+                        Flyweight
+                    </a>
+                </div>
+            </div>
+
+            <div id="wc-1" class="nav-gray cell angle-box">
+                <div class="wc-label">
+                    <a class="" asp-route-divisionCategory="135 lb">
+                        Bantamweight
+                    </a>
+                </div>
+            </div>
+
+            <div id="wc-2" class="nav-gray cell angle-box">
+                <div class="wc-label">
+                    <a class="" asp-route-divisionCategory="145 lb">Featherweight</a>
+                </div>
+            </div>
+
+            <div id="wc-3" class="nav-gray cell angle-box">
+                <div class="wc-label">
+                    <a class="" asp-route-divisionCategory="155 lb">Lightweight</a>
+                </div>
+            </div>
+
+            <div id="wc-4" class="nav-gray cell angle-box">
+                <div class="wc-label">
+                    <a class="" asp-route-divisionCategory="170 lb">Welterweight</a>
+                </div>
+            </div>
+
+            <div id="wc-5" class="nav-gray cell angle-box">
+                <div class="wc-label">
+                    <a class="" asp-route-divisionCategory="185 lb">Middleweight</a>
+                </div>
+            </div>
+
+            <div id="wc-6" class="nav-gray cell angle-box wow">
+                <div class="wc-label">
+                <a class="" asp-route-divisionCategory="205 lb">Light Heavyweight</a></div>
+            </div>
+
+            <div id="wc-7" class="nav-gray cell angle-box">
+                <div class="wc-label"><a class="" asp-route-divisionCategory="">Heavyweight</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<container class="col-md-12">
+    <table class="table table-all-fighters table-responsive-lg col-md-12">
+        <thead class="table-header">
+            <tr>
+                <th>
+                    <a asp-action="AllFighters" asp-route-sortOrder="@ViewData["NameSortParm"]">Fighter</a>
+                </th>
+                <th>
+                    <a asp-action="AllFighters" asp-route-sortOrder="@ViewData["RecordSortParm"]">Record</a>
+                </th>
+                <th>
+                    <a asp-action="AllFighters" asp-route-sortOrder="@ViewData["HeightSortParm"]">Height</a>
+                </th>
+                <th>
+                    <a asp-action="AllFighters" asp-route-sortOrder="@ViewData["WeightSortParm"]">Weight</a>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model) {
+                <tr class="fighter">
+                    <td>
+                        <div class="cell-inner">
+                            @if (item.ImageInList != null) {
+                                <img class="fighter-image" style="background-color:#CCC"
+                                     src="@item.ImageInList"
+                                     alt="@Html.DisplayFor(modelItem => item.LastName)">
+                            }
+                            else {
+                                <img class="fighter-image" style="background-color:#CCC"
+                                     src="~/images/unknown.jpg"
+                                     alt="@Html.DisplayFor(modelItem => item.LastName)">
+                            }
+                            <div class="fighter-info">
+                                <div>
+                                    <a class="fighter-name" asp-action="FighterProfile" 
+                                       asp-route-fullName="@item.FirstName@item.LastName">
+                                        @Html.DisplayFor(modelItem => item.FirstName)
+                                        @Html.DisplayFor(modelItem => item.LastName)
+                                    </a>
+                                </div>
+                                @if (item.Nickname != null) {
+                                    <div class="fighter-nickname">"@Html.DisplayFor(modelItem => item.Nickname)"</div>
+                                }
+                            </div>
+                            <div class="clear"><!-- --></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-inner">
+
+                            <div class="main-txt">@Html.DisplayFor(modelItem => item.Record)</div>
+                            <div class="sub-txt">(W-L-D)</div>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-inner">
+
+                            <div class="main-txt">@Html.DisplayFor(modelItem => item.Height)</div>
+                            <div class="sub-txt">@Html.DisplayFor(modelItem => item.HeightCm)</div>
+
+                        </div>
+                    </td>
+                    <td class="last">
+                        <div class="cell-inner">
+
+                            <div class="main-txt">@Html.DisplayFor(modelItem => item.Weight)</div>
+                            <div class="sub-txt">(@Html.DisplayFor(modelItem => item.WeightKg))</div>
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+</container>
+
+

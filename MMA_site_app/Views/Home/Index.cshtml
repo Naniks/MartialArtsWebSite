@@ -1,0 +1,91 @@
+﻿@model IEnumerable<MMA_site_app.Models.TitleHolder>
+
+@{
+    Layout = "_LayoutProfile";
+    ViewData["Title"] = "MMA";
+}
+<div class="text-right">    
+    <a asp-area="Admin" asp-controller="Account" asp-action="Login" class="btn btn-danger mt-2">To LogIn page</a>
+    <a asp-area="Admin" asp-controller="Perfomanses" asp-action="Index" class="btn btn-danger mt-2">To Admin page</a>
+</div>
+
+<div id="wc-headers">
+
+    <div id="men_wc" class="clearfix wc-nav-row wc-pad">
+
+        <div class="wc-title-section ">
+            <div class="nav-red cell angle-box">
+                <span class="wc-label">Men's</span>
+            </div>
+            <span class="wc-red wc-angle"></span>
+        </div>
+        <div class="wc-classes-section">
+
+            <div id="wc-0" class="nav-gray cell angle-box">
+                <div class="wc-label"><a href="#" class="">Flyweight</a></div>
+            </div>
+
+            <div id="wc-1" class="nav-gray cell angle-box">
+                <div class="wc-label"><a href="#" class="">Bantamweight</a></div>
+            </div>
+
+            <div id="wc-2" class="nav-gray cell angle-box">
+                <div class="wc-label"><a href="#" class="">Featherweight</a></div>
+            </div>
+
+            <div id="wc-3" class="nav-gray cell angle-box">
+                <div class="wc-label"><a href="#" class="">Lightweight</a></div>
+            </div>
+
+            <div id="wc-4" class="nav-gray cell angle-box">
+                <div class="wc-label"><a href="#" class="">Welterweight</a></div>
+            </div>
+
+            <div id="wc-5" class="nav-gray cell angle-box">
+                <div class="wc-label"><a href="#" class="">Middleweight</a></div>
+            </div>
+
+            <div id="wc-6" class="nav-gray cell angle-box wow">
+                <div class="wc-label"><a href="#" class="">Light Heavyweight</a></div>
+            </div>
+
+            <div id="wc-7" class="nav-gray cell angle-box">
+                <div class="wc-label"><a href="#" class="">Heavyweight</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="all-fighters-category">
+    <a asp-action="AllFighters">All Fighters</a>
+</div>
+
+<div class="dotted-bg">
+    <div><h3><span>Title Holders</span></h3></div>
+</div>
+
+<div class="title-holders row justify-content-around">
+    @foreach (var titleHolder in Model) {
+        <div class="fighter-card-wrap col-lg-3 col-md-4 col-sm-6 col-xs-12 d-flex justify-content-center">
+            <div class="card " style="width: 164px; ">
+                <div class="card-header">@titleHolder.WeightCategory</div>
+                <a href="@titleHolder.ProfileLink">
+                    <img class="card-img-top"
+                         src="@titleHolder.ImageTitle" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title">@titleHolder.FirstName @titleHolder.LastName</h4>
+                    <p class="card-text">@titleHolder.Record<span class="wld-desc">( W-L-D )</span></p>
+                    <div class="btn-red-arrow">
+                        <a href="@titleHolder.ProfileLink">Fighter Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+

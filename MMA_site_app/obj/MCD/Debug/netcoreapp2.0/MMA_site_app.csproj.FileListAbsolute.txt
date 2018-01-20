@@ -1,0 +1,10 @@
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\bin\MCD\Debug\netcoreapp2.0\MMA_site_app.deps.json
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\bin\MCD\Debug\netcoreapp2.0\MMA_site_app.runtimeconfig.json
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\bin\MCD\Debug\netcoreapp2.0\MMA_site_app.runtimeconfig.dev.json
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\bin\MCD\Debug\netcoreapp2.0\MMA_site_app.dll
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\bin\MCD\Debug\netcoreapp2.0\MMA_site_app.pdb
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\obj\MCD\Debug\netcoreapp2.0\MMA_site_app.csproj.CoreCompileInputs.cache
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\obj\MCD\Debug\netcoreapp2.0\MMA_site_app.AssemblyInfoInputs.cache
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\obj\MCD\Debug\netcoreapp2.0\MMA_site_app.AssemblyInfo.cs
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\obj\MCD\Debug\netcoreapp2.0\MMA_site_app.dll
+C:\Users\Ольга\source\repos\Fighter web site\MMA_site_app\MMA_site_app\obj\MCD\Debug\netcoreapp2.0\MMA_site_app.pdb

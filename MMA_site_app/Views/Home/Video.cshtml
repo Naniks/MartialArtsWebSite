@@ -1,0 +1,74 @@
+﻿@model MMA_site_app.Models.ViewModels.VideoPerfomance
+
+@{
+    Layout = "_LayoutProfile";
+    ViewData["Title"] = $"{Model.Fighter.FirstName} {Model.Fighter.LastName} - {Model.Perfomace.EnemyName}";
+}
+
+<nav aria-label="breadcrumb" role="navigation" class="">
+    <ol class="breadcrumb breadcrumb-top">
+        <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-action="AllFighters">Fighters</a></li>
+        <li class="breadcrumb-item">
+            <a asp-action="FighterProfile" asp-route-id="@Model.Fighter.ID">
+                @Model.Fighter.FirstName @Model.Fighter.LastName
+            </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Video</li>
+    </ol>
+</nav>
+
+<div class="container">
+    <div>
+        <a asp-action="FighterProfile" asp-route-id="@Model.Fighter.ID">
+            @Model.Fighter.FirstName @Model.Fighter.LastName
+        </a> -
+        <a href="@Model.Perfomace.EnemyLink">
+            @Model.Perfomace.EnemyName
+        </a>
+    </div>
+    <div>
+        @Model.Perfomace.Tournament
+        <br />
+        @Model.Perfomace.Date
+        <br />
+        @if (Model.Perfomace.Result != null) {
+            <div class="mb-5">
+                Результат:
+                @if (Model.Perfomace.Result.ToLower() != "ничья") {
+                    @if (Model.Perfomace.Result.ToLower() == "победа") {
+                        <span>
+                            @Model.Fighter.FirstName @Model.Fighter.LastName победил
+                        </span>
+                    }
+                    @if (Model.Perfomace.Result.ToLower() == "поражение") {
+                        <span>
+                            @Model.Perfomace.EnemyName победил
+                        </span>
+                    }
+                    <br />
+                    @if (Model.Perfomace.Method != null && (Model.Perfomace.Method.Contains("Решение") || Model.Perfomace.Method.Contains("решение"))) {
+                        <span>
+                            Метод: @Model.Perfomace.Method
+                        </span>
+                    }
+                    else if (Model.Perfomace.Method != null) {
+                        <span>
+                            Метод: @Model.Perfomace.Method
+                            на @Model.Perfomace.Time минуте @Model.Perfomace.Round раунда
+                        </span>
+                    }
+                }
+                else {
+                    <span>
+                        Ничья
+                    </span>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9 mb-5">
+        <iframe class="embed-responsive-item" src="@Model.Perfomace.Video" allowfullscreen></iframe>
+    </div>
+</div>

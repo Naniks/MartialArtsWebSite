@@ -1,0 +1,246 @@
+﻿.dotted-bg {
+    text-align: center;
+    background: url(../images/header-dotted-bg.gif) top left repeat;
+    height: 48px;
+    margin-bottom: 15px;
+}
+
+    .dotted-bg h3 {
+        margin-top: 0;
+    }
+
+        .dotted-bg h3 span {
+            padding-top: 10px;
+            color: #c00e1c;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+        }
+
+.title-holders .card {
+    background-color: #e8e8e8;
+    border: none;
+}
+
+.border-light {
+    border-color: #e8e8e8 !important;
+}
+
+.title-holders .card-header {
+    /*background-color: #c00e1c;*/
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    height: 20px;
+    text-align: center;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: url(../images/buttons-left.png) 0 0 no-repeat;
+}
+
+.title-holders .card-title {
+    color: #c30e21;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.title-holders .card-text {
+    font-size: 12px;
+    line-height: 20px;
+    color: #181818;
+    margin: 0;
+}
+
+    .title-holders .card-text .wld-desc {
+        font-size: 11px;
+        line-height: 18px;
+        color: #666;
+    }
+
+.title-holders .botton {
+    background-color: black;
+}
+
+.title-holders .card-body {
+    background-color: #e8e8e8;
+    border: none;
+    box-shadow: none;
+    margin: 0 10px;
+    padding: 0;
+}
+
+    .title-holders .card-body .btn-red-arrow {
+        background: url(../images/black-arrow-right.png);
+        width: 105px;
+        margin-top: 6px;
+        padding-right: 14px;
+        cursor: pointer;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+        .title-holders .card-body .btn-red-arrow a {
+            background: #000;
+            padding: 0 4px 0 6px;
+            height: 21px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: 21px;
+            cursor: pointer;
+            white-space: nowrap;
+            display: block;
+        }
+
+.fighter-card-wrap {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+
+/*Weight Classes*/
+
+#wc-headers .wc-nav-row {
+    color: #fff;
+    font-size: 13px;
+}
+
+    #wc-headers .wc-nav-row.wc-pad {
+        padding-bottom: 5px;
+    }
+
+#wc-headers .clearfix:before, #wc-headers .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+#wc-headers .wc-title-section, #wc-headers .wc-classes-section {
+    /*float: left;*/
+}
+
+#wc-headers .wc-nav-row .cell.nav-red {
+    padding-left: 5px;
+}
+
+#wc-headers .wc-nav-row .cell {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 15px 2px;
+    float: left;
+    text-transform: uppercase;
+    /*height: 15px;*/
+}
+
+#wc-headers .nav-red {
+    background-color: #c10e1f;
+    font-weight: bold;
+}
+
+#wc-headers .angle-box {
+    margin-top: 5px;
+}
+
+#wc-headers .wc-angle {
+    height: 0;
+    width: 0;
+    border-right: 12px solid transparent;
+    margin-left: -4px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+#wc-headers .wc-red {
+    border-top: 25px solid #c10e1f;
+}
+
+#wc-headers .nav-gray {
+    -webkit-transform: skew(-40deg);
+    transform: skew(-40deg);
+}
+
+#wc-headers .nav-gray {
+    background: #a4a4a4;
+    background: linear-gradient(to right,#7f7f7f 0,#a4a4a4 17%,#a4a4a4 100%);
+    margin-left: -5px;
+}
+
+    #wc-headers .nav-gray .wc-label {
+        -webkit-transform: skew(40deg);
+        transform: skew(40deg);
+    }
+
+#wc-headers .wc-nav-row .cell a {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#content {
+    text-align: left;
+    clear: both;
+}
+
+#wc-headers .clearfix:after {
+    clear: both;
+}
+
+#wc-headers .clearfix:before, #wc-headers .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.all-fighters-category {
+    background-color: #c00e1c;
+    display: inline-block;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+    .all-fighters-category a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+
+.history-title {
+    color: #c10e1f;
+    margin-top: 0;
+}
+
+.breadcrumb-all-fighters {
+    margin-bottom: 5px;
+}
+

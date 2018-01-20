@@ -1,0 +1,47 @@
+﻿.table-all-fighters .fighter .fighter-image {
+    float: left;
+    position: relative;
+    margin-right: 15px;
+    
+}
+
+.table-all-fighters .fighter .fighter-info {
+    float: left;
+    position: relative;
+}
+
+.table-all-fighters .fighter a.fighter-name {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #181818;
+    display: inline-block;
+    padding-right: 15px;
+    background: url(../images/career-fighter-arrow.png) bottom right no-repeat;
+    text-decoration: none;
+}
+
+.table-all-fighters .fighter .fighter-nickname {
+    font-size: 12px;
+    line-height: 20px;
+    color: #181818;
+}
+
+.clear {
+    clear: both;
+}
+
+.table-all-fighters .fighter .main-txt {
+    font-size: 11px;
+    line-height: 18px;
+    color: #181818;
+}
+
+.table-all-fighters .fighter .sub-txt {
+    font-size: 11px;
+    line-height: 18px;
+    color: #666;
+}
+
+
+

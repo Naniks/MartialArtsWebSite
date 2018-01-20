@@ -1,0 +1,164 @@
+﻿@model MMA_site_app.Models.Fighter
+
+@{
+    Layout = "_LayoutProfile";
+    ViewData["Title"] = $"{Model.FirstName} {Model.LastName}";
+}
+
+<nav aria-label="breadcrumb" role="navigation" class="">
+    <ol class="breadcrumb breadcrumb-top">
+        <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-action="AllFighters">Fighters</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Fighter Listing</li>
+    </ol>
+</nav>
+
+<div id="fighter-details">
+    @if (Model.ImageMainProfile != null) {
+        <div class="fighter-banner lg-and-md hidden visible-sm visible-md visible-lg ">
+            <div class="fighter-image">
+                <img src="@Model.ImageMainProfile" />
+            </div>
+        </div>
+    }
+    else {
+        <div class="fighter-banner lg-and-md hidden visible-sm visible-md visible-lg ">
+            <div class="fighter-image">
+                <img src="http://media.ufc.tv/fighter_images//ComingSoon/comingsoon_headshot_odopod.png" />
+            </div>
+        </div>
+    }
+
+    <div class="container">
+        <div class="fighter-history">
+            <h2 class="title">FIGHT HISTORY</h2>
+            <div class="row">
+                <div class="skill-breakdown col-10 offset-1 col-sm-5 col-md-4 offset-sm-1 offset-md-1 offset-lg-1" id="skill-breakdown">
+                    <h3 class="">Skill Breakdown</h3>
+                    <div class="skill-disclaimer">
+                        Charts are compiled based on results from 10 fights.
+                    </div>
+                    <table cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="label">Record:</td>
+                                <td id="fighter-skill-record" class="value">@Html.DisplayFor(model => model.Record)</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Summary:</td>
+                                <td id="fighter-skill-summary" class="value">@Html.DisplayFor(model => model.Summary)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="fighter-info col-10 offset-1 col-sm-5 col-md-5  offset-md-1 offset-lg-2" id="fighter-info">
+                    <h3 class="">Fighter Info</h3>
+                    <table cellpadding="0" cellspacing="0">
+                        <tbody>
+                            @if (Model.Nickname != null) {
+                                <tr>
+                                    <td class="label">Nickname:</td>
+                                    <td id="fighter-nickname" class="value">@Html.DisplayFor(model => model.Nickname)</td>
+                                </tr>
+                            }
+                            <tr>
+                                <td class="label">From:</td>
+                                <td id="fighter-from" class="value">
+                                    @Html.DisplayFor(model => model.From)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">Fights Out Of:</td>
+                                <td id="fighter-lives-in" class="value">
+                                    @Html.DisplayFor(model => model.FightsOutOf)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">Age:</td>
+                                <td id="fighter-age" class="value">@Html.DisplayFor(model => model.Age)</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Height:</td>
+                                <td id="fighter-height" class="value">
+                                    @Html.DisplayFor(model => model.Height)
+                                    ( @Html.DisplayFor(model => model.HeightCm) )
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">Weight:</td>
+                                <td id="fighter-weight" class="value">
+                                    @Html.DisplayFor(model => model.Weight)
+                                    (@Html.DisplayFor(model => model.WeightKg))
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">Reach </td>
+                                <td id="fighter-reach" class="value">@Html.DisplayFor(model => model.Reach)</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Leg Reach </td>
+                                <td id="fighter-leg-reach" class="value">@Html.DisplayFor(model => model.LegReach)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <container class="col-md-9">
+            <table class="table table-responsive-lg col-md-9">
+                <thead class="table-header">
+                    <tr>
+                        <th>Результат</th>
+                        <th>Соперник</th>
+                        <th scope="col">Турнир и дата</th>
+                        <th scope="col">Метод</th>
+                        <th scope="col">Р</th>
+                        <th scope="col">Время</th>
+                        <th scope="col">Смотреть</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var perfomance in Model.Perfomanses) {
+                    <tr>
+                        <td scope="row" class="result">
+                            @if (perfomance.Result != null) {
+                                    if (perfomance.Result.ToLower() == "победа") {
+                                <div class="win">
+                                    @Html.DisplayFor(modelItem => perfomance.Result)
+                                </div>
+                                    }
+                                    else {
+                                <div class="">
+                                    @Html.DisplayFor(modelItem => perfomance.Result)
+                                </div>
+                                    }
+                                }
+
+                        </td>
+                        <td>
+                            <a href="@perfomance.EnemyLink">
+                                @Html.DisplayFor(modelItem => perfomance.EnemyName)
+                            </a>
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => perfomance.Tournament) <br />5 марта 2016</td>
+                        <td>@Html.DisplayFor(modelItem => perfomance.Method)</td>
+                        <td>@Html.DisplayFor(modelItem => perfomance.Round)</td>
+                        <td>@Html.DisplayFor(modelItem => perfomance.Time)</td>
+                        <td>
+                            <div class="btn btn-video">
+                                <a asp-action="Video"
+                                   asp-route-perfomanceId="@perfomance.PerfomanseID"
+                                   asp-route-fullName="@Model.FirstName@Model.LastName">
+                                    <span class="Video">Смотреть</span>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    }
+                </tbody>
+            </table>
+        </container>
+</div>

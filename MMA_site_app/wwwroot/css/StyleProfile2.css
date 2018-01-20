@@ -1,0 +1,184 @@
+﻿
+ol.breadcrumb-top li {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-rendering: auto;
+}
+
+.breadcrumb {
+    background-color: #e8e8e8;
+    padding-left: 10px;
+}
+
+    .breadcrumb .breadcrumb-item a {
+        color: gray;
+    }
+
+        .breadcrumb .breadcrumb-item a:hover {
+            color: #c10e1f;
+            text-decoration: underline;
+        }
+
+    .breadcrumb > .active {
+        color: #c10e1f;
+        z-index: 100;
+    }
+
+
+div.content {
+    background-color: #e8e8e8;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #666;
+}
+
+.fighter-banner{
+    position: relative;
+    height: 290px;
+    background: #004 url(../images/details-header.jpg) top left repeat-x;
+}
+
+.lg-and-md {
+    position: relative;
+    height: 290px;
+    background: #004 url(../images/details-header.jpg) top left repeat-x;
+}
+
+.sm-and-xs {
+    position: relative;
+    height: 240px;
+    background: #004 url(../images/details-header.jpg) top left repeat-x;
+}
+
+.sm-and-xs img {
+    /*height: 220px;*/
+}
+
+
+.fighter-banner .fighter-image {
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    z-index: 50;
+}
+
+#fighter-details .fighter-top .fighter-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 60;
+    margin: 0 0 15px 33px;
+}
+
+#fighter-details h2 {
+    color: #c10e1f;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 4px;
+    padding: 12px 18px;
+}
+
+#fighter-details .skill-breakdown {
+    border-right: 1px dotted #d6d6d6;
+    width: 205px;
+    height: 195px;
+    margin-bottom: 20px;
+    padding-left:17px;
+}
+
+    #fighter-details .skill-breakdown .skill-disclaimer {
+        padding-right: 20px;
+        padding-bottom: 10px;
+        color: #666;
+        font-size: 13px;
+    }
+
+#fighter-details h3 {
+    font-weight: bold;
+    font-size: 14px;
+    color: #c10e1f;
+}
+
+#fighter-details #fighterPerfomanse h2.title {
+    float: left;
+    position: absolute;
+    margin-top: 8px;
+    z-index: 100 !important;
+}
+
+#fighter-details .fighter-info {
+    /*width: 202px;*/
+    padding: 0 0 20px 15px;
+}
+
+    #fighter-details .fighter-info h3, #fighter-details .skill-breakdown h3 {
+        padding-bottom: 6px;
+    }
+
+
+    #fighter-details .fighter-info td.label, #fighter-details .skill-breakdown td.label {
+        font-size: 11px;
+        color: #666;
+        line-height: 16px;
+        width: 95px;
+        vertical-align: top;
+    }
+
+    #fighter-details .fighter-info td.value, #fighter-details .skill-breakdown td.value {
+        font-size: 12px;
+        color: #181818;
+        line-height: 18px;
+    }
+
+/*table*/
+
+table {
+    font-size: 12px;
+}
+
+.table-header {
+    background-color: white;
+}
+
+td.result div {
+    background: #a1a1a1;
+    text-align: center;
+    color: #FFF;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+    td.result div.win {
+        background: #c10e1f;
+    }
+
+    .table-header tr th {
+        font-weight: normal !important;
+    }
+
+.watch-button {
+    cursor: pointer;
+}
+
+span.Video {
+    background-position: 100% 0;
+    padding-right: 18px;
+    background: url(../images/linktype.png) 100% 0 no-repeat;
+    padding-right: 18px;
+    color: black;
+    text-decoration: none !important;
+    font-size: 12px;
+}
+
+div.btn-video {
+    background-color: #d6d6d6;
+}
+
+div.btn a:hover, span.Video:hover {
+    color: #c10e1f;
+}
+
+
+/* /table */

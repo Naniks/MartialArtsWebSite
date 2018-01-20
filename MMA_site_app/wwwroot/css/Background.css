@@ -1,0 +1,18 @@
+﻿body {
+    /*margin: 0;*/
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    background: url(../images/main-bg.jpg) top center no-repeat;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+

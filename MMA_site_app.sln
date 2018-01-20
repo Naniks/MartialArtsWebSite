@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMA_site_app", "MMA_site_app\MMA_site_app.csproj", "{28F314D6-8757-4CF9-A0A1-4F1637D73227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28F314D6-8757-4CF9-A0A1-4F1637D73227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F314D6-8757-4CF9-A0A1-4F1637D73227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F314D6-8757-4CF9-A0A1-4F1637D73227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F314D6-8757-4CF9-A0A1-4F1637D73227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {250B3491-059F-463B-B0F5-66D7A14E8FD2}
+	EndGlobalSection
+EndGlobal
